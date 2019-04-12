@@ -1,0 +1,37 @@
+<!--The content below is only a placeholder and can be replaced.-->
+  <h3>
+    Azure AD Developer support | Adal-Angular-2 sample app
+  </h3>
+
+  <h3 *ngIf="adalService.userInfo">
+    Welcome {{userDisplayName}}
+  </h3>
+  
+  <nav id="unsecured-nav" *ngIf="!adalService.userInfo">
+    <a [routerLink]="['/']">
+      Login
+    </a> 
+  </nav>
+  
+  <nav id="secured-nav" *ngIf="adalService.userInfo">
+    <a [routerLink]="['/logout']">
+      Logout
+    </a> 
+    |
+    <a [routerLink]="['/start']">
+      Home
+    </a> 
+    |
+    <a [routerLink]="['/about']">
+      About
+    </a> 
+  </nav>
+  
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+  
+  <br />
+  <footer>
+    © 2019 | William Fiddes Organization
+  </footer>
